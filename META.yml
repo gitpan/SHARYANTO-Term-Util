@@ -24,7 +24,7 @@ resources:
   bugtracker: https://rt.cpan.org/Public/Dist/Display.html?Name=SHARYANTO-Term-Util
   homepage: https://metacpan.org/release/SHARYANTO-Term-Util
   repository: git://github.com/sharyanto/perl-SHARYANTO-Term-Util.git
-version: '0.01'
+version: '0.02'
 x_Dist_Zilla:
   perl:
     version: '5.018001'

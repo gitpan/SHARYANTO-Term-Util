@@ -4,7 +4,7 @@ use 5.010001;
 use strict;
 use warnings;
 
-our $VERSION = '0.01'; # VERSION
+our $VERSION = '0.02'; # VERSION
 our $DATE = '2014-06-07'; # DATE
 
 use Exporter;
@@ -51,20 +51,39 @@ SHARYANTO::Term::Util - Terminal utilities
 
 =head1 VERSION
 
-This document describes version 0.01 of SHARYANTO::Term::Util (from Perl distribution SHARYANTO-Term-Util), released on 2014-06-07.
+This document describes version 0.02 of SHARYANTO::Term::Util (from Perl distribution SHARYANTO-Term-Util), released on 2014-06-07.
+
+=head1 SYNOPSIS
+
+ use SHARYANTO::Term::Util qw(hr);
+ hr;
+
+Sample output:
+
+ =============================================================================
+
+ hr('x----');
+
+Sample output:
+
+ x----x----x----x----x----x----x----x----x----x----x----x----x----x----x----x-
 
 =head1 FUNCTIONS
 
 =head2 hr([CHAR]) => optional STR
 
 Print (under void context) or return (under scalar/array context) a horizontal
-bar with the width of the terminal.
+ruler with the width of the terminal.
 
 C<CHAR> is optional, can be multicharacter, but cannot be empty string. The
 defautl is C<=>.
 
 Under Windows, when printing, will shave one character at the end because the
 terminal cursor will move a line down when printing at the last column.
+
+Terminal width is currently determined using L<SHARYANTO::Role::TermAttrs>,
+which will either use environment variable C<COLUMNS> or detecting using
+L<Term::Size>, or if all those fail, use a hard-coded default of 80.
 
 =head1 SEE ALSO
 
